@@ -1,0 +1,247 @@
+/* Reset de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f3f3; /* Fundo suave de rosa claro */
+    color: #4f4f4f; /* Texto em cinza escuro para boa legibilidade */
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1.5s ease-out; /* Efeito de fade-in suave ao carregar a página */
+}
+
+/* Estilo do cabeçalho */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f1c6d6; /* Rosa suave para o cabeçalho */
+    color: #e91e63; /* Vermelho claro para o título */
+    opacity: 0;
+    transform: translateY(-20px); /* Começa um pouco fora da tela */
+    animation: fadeInHeader 1s ease-out forwards; /* Animação suave ao carregar */
+}
+
+@keyframes fadeInHeader {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    animation: fadeIn 2s ease-out forwards; /* Animação de fade-in */
+}
+
+p {
+    margin-top: 0.7em;
+    font-size: 1.2em;
+    color: #333; /* Texto de descrição em cinza escuro */
+}
+
+#timer {
+    font-size: 1.5em;
+    color: #e91e63; /* Vermelho claro para o contador */
+    margin-top: 20px;
+    font-weight: bold;
+    animation: fadeIn 3s ease-out forwards; /* Animação suave no contador */
+}
+
+/* Estilos para a galeria de imagens */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos dos containers das imagens */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInImage 1.5s ease-out forwards; /* Animação de fade-in para cada imagem */
+    transition: transform 0.3s ease;
+}
+
+@keyframes fadeInImage {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Padronizando o tamanho das imagens */
+.image-container img {
+    width: 100%;
+    height: 200px; /* Tamanho fixo para a altura */
+    object-fit: cover; /* Garantir que a imagem se ajuste sem distorcer */
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Efeito suave de zoom */
+}
+
+.image-container img:hover {
+    transform: scale(1.1); /* Zoom suave nas imagens ao passar o mouse */
+}
+
+/* Descrição das imagens */
+.image-container p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #9e7d8e; /* Lilás suave para as descrições */
+}
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInModal 1s ease-out forwards; /* Efeito de fade-in para o modal */
+}
+
+@keyframes fadeInModal {
+    to {
+        opacity: 1;
+    }
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    animation: zoomIn 0.6s ease-out; /* Animação de zoom suave ao abrir o modal */
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    animation: pulse 1.5s infinite ease-in-out; /* Efeito de pulsação para o botão de fechar */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal-controls {
+    margin-top: 20px;
+}
+
+.modal-controls button {
+    background-color: #e91e63; /* Cor do botão */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin: 0 10px;
+}
+
+.modal-controls button:hover {
+    background-color: #c2185b; /* Cor mais escura ao passar o mouse */
+}
+
+/* Media queries para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 15px;
+        background-color: #f1c6d6;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    #timer {
+        font-size: 1.3em;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .image-container img {
+        border-radius: 8px;
+    }
+
+    .image-container p {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    #timer {
+        font-size: 1.2em;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .image-container img {
+        border-radius: 6px;
+    }
+
+    .image-container p {
+        font-size: 0.7em;
+    }
+}

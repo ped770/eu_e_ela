@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kauã & Emilly</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Kauã & Emilly</h1>
+        <p>Feliz Natal, meu amor. Fiz esse álbum pra você, te amo.</p>
+        <p id="timer"></p> <!-- Adiciona o contador de tempo -->
+    </header>
+
+    <section class="image-gallery">
+        <div class="image-container" onclick="openModal('image1')">
+            <img src="image2.png" alt="Imagem 1">
+            <p>Carta para Emilly Mirelly</p>
+        </div>
+        <div class="image-container" onclick="openModal('image2')">
+            <img src="image2.jpg" alt="Imagem 2">
+            <p>Eu</p>
+        </div>
+        <div class="image-container" onclick="openModal('image3')">
+            <img src="image3.jpg" alt="Imagem 3">
+            <p>Te</p>
+        </div>
+        <div class="image-container" onclick="openModal('image4')">
+            <img src="image4.jpg" alt="Imagem 4">
+            <p>Amo</p>
+        </div>
+        <div class="image-container" onclick="openModal('image5')">
+            <img src="image5.jpg" alt="Imagem 5">
+            <p>Garota</p>
+        </div>
+        <div class="image-container" onclick="openModal('image6')">
+            <img src="image6.jpg" alt="Imagem 6">
+            <p>Linda</p>
+        </div>
+        <div class="image-container" onclick="openModal('image7')">
+            <img src="image7.jpg" alt="Imagem 7">
+            <p>Do</p>
+        </div>
+        <div class="image-container" onclick="openModal('image8')">
+            <img src="image8.jpg" alt="Imagem 8">
+            <p>Meu</p>
+        </div>
+        <div class="image-container" onclick="openModal('image9')">
+            <img src="image9.jpg" alt="Imagem 9">
+            <p>Coração.</p>
+        </div>
+        <div class="image-container" onclick="openModal('image10')">
+            <img src="image10.jpg" alt="Imagem 10">
+            <p>Você</p>
+        </div>
+        <div class="image-container" onclick="openModal('image11')">
+            <img src="image11.jpg" alt="Imagem 11">
+            <p>É</p>
+        </div>
+        <div class="image-container" onclick="openModal('image12')">
+            <img src="image12.jpg" alt="Imagem 12">
+            <p>Linda</p>
+        </div>
+        <div class="image-container" onclick="openModal('image13')">
+            <img src="image13.jpg" alt="Imagem 13">
+            <p>E</p>
+        </div>
+        <div class="image-container" onclick="openModal('image14')">
+            <img src="image14.jpg" alt="Imagem 14">
+            <p>Espetacular.</p>
+        </div>
+    </section>
+
+        <!-- Modal -->
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <img id="modalImage" src="" alt="">
+        <div class="modal-controls">
+            <button id="prevButton" onclick="changeImage(-1)">&#10094; Anterior</button>
+            <button id="nextButton" onclick="changeImage(1)">Próxima &#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
